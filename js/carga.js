@@ -5,37 +5,37 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 1,
             nombre: 'Wireframe',
             precio: 912,
-            imagen: 'https://granjaus.com/wp-content/uploads/2019/02/AA113.jpg'
+            imagen: 'https://jaejohns.com/wp-content/uploads/2019/07/free-wireframe-tool.jpg.webp'
         },
         {
             id: 2,
             nombre: 'Diseño Grafico',
             precio: 725,
-            imagen: 'https://frutasolivar.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/09/main-img-manzana.jpg.webp'
+            imagen: 'https://media.istockphoto.com/id/628814432/es/foto/dise%C3%B1ador-gr%C3%A1fico-en-el-trabajo-color-de-las-muestras.jpg?s=612x612&w=0&k=20&c=gaq7vcUoXDaPvmn_6QEi2FR9Y11BLY9_4tmrVWUVeLw='
         },
         {
             id: 3,
             nombre: 'Frontend',
             precio: 1000,
-            imagen: 'https://laopinion.com/wp-content/uploads/sites/3/2015/10/pera.jpg?quality=80&strip=all&w=1196'
+            imagen: 'https://kodus.io/wp-content/uploads/2020/07/16.jpg'
         },
         {
             id: 4,
             nombre: 'Javascript',
             precio: 278,
-            imagen: 'https://greenshop.ar/wp-content/uploads/sites/9/2016/08/A.2.6-500GR.jpg'
+            imagen: 'https://www.adictosaltrabajo.com/wp-content/uploads/2018/05/el_remozado_javascript.imagen.jpg'
         },
         {
             id: 5,
             nombre: 'Backend',
             precio: 279,
-            imagen: 'https://greenshop.ar/wp-content/uploads/sites/9/2016/08/A.6.7-500GR-600x600.jpg'
+            imagen: 'https://tuyendung.kfcvietnam.com.vn/Data/Sites/1/News/268/lap-trinh-back-end.jpg'
         },
         {
             id: 6,
             nombre: 'Sysadmin',
             precio: 275,
-            imagen: 'https://greenshop.ar/wp-content/uploads/sites/9/2016/08/A.6.14-500GR-600x600.jpg'
+            imagen: 'https://www.computersciencedegreehub.com/wp-content/uploads/2020/06/What-is-a-Systems-Administrator-1024x576.jpg'
         }
     ];
 
