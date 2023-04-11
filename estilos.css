@@ -104,7 +104,7 @@ header {
 
 .btn-primary {
     background-color: transparent;
-    border: var(--colorPrincipal) 3px solid;
+    border: #c4c2c2f1 3px solid;
     border-radius: 5px;
   }
 
