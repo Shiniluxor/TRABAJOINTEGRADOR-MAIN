@@ -242,12 +242,12 @@ main .sobre-nosotros{
 .cards .card{
     background: var(--colorPrincipal);
     display: flex;
-    width: 46%;
-    height: 200px;
     align-items: center;
     justify-content: space-evenly;
     border-radius: 5px;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
+    width: 48%;
+    height: 70vh;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.6);
 }
 
 .cards .card img{
