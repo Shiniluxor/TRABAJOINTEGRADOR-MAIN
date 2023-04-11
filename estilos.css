@@ -18,7 +18,7 @@ body {
 }
 
 .contenedor {
-    padding: 60px 0;
+    /* padding: 60px 0; */
     width: 90%;
     max-width: 1000px;
     margin: auto;
@@ -97,6 +97,10 @@ header {
     border-radius: 5px;
     color: #ebe8e8f1;
 }
+
+.navbar-sticky #btn-login:hover {
+    border-color: #ff0000;
+  }
 
 .btn-primary {
     background-color: transparent;
@@ -371,11 +375,11 @@ footer{
     }
 
     .cards .card{
-        width: 90%;
+        width: 0%;
     }
 
     .cards .card:first-child{
-        margin-bottom: 30px;
+        margin-bottom: 0px;
     }
 
     /* servicios */
@@ -495,5 +499,9 @@ footer{
     border: 2px solid var(--colorPrincipal);  
     border-radius: 5px;
     margin-bottom: 60px;
+}
+
+.btn-item-carrito {
+    background-color: var(--colorPrincipal);
 }
 
