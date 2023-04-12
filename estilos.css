@@ -1,13 +1,20 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 :root{
     --colorPrincipal: #4D0786;
     --colorSecundario: #94007A;
+    --colorBorde: #c4c2c2f1;
+    --colorText: #ebe8e8f1;
+    --colorBackgroundSectionA: #f2f2f2;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
 
 html {
     scroll-padding-top: 101px;
@@ -27,26 +34,11 @@ body {
 
 .titulo {
     color: var(--colorPrincipal);
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
     margin-bottom: 60px;
 }
 
-/* Header */
-
-header {
-    width: 100%;
-    height: 600px;
-    background: var(--colorPrincipal);
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, hsla(340, 95%, 50%, 0.459), hsla(317, 45%, 52%, 0.664)), url(imagenes/portada.jpg);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, hsla(340, 95%, 50%, 0.459), hsla(317, 45%, 52%, 0.664)), url(imagenes/portada.jpg);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-size: cover;
-    background-attachment: fixed;
-    position: relative;
-}
 /* navbar */
 
 .navbar {
@@ -93,14 +85,17 @@ header {
 
 .navbar a:hover{
     background-color: var(--colorSecundario);
-    border: var(--colorSecundario) 3px solid;
-    border-radius: 5px;
     color: #ebe8e8f1;
 }
 
-.navbar-sticky #btn-login:hover {
-    border-color: #ff0000;
-  }
+.navbar .navbar-brand {
+    font-size: 30px;
+    
+}
+
+.navbar .navbar-brand:hover{
+    color: var(--colorSecundario);
+}
 
 .btn-primary {
     background-color: transparent;
@@ -109,6 +104,22 @@ header {
   }
 
 /* header  */
+
+header {
+    width: 100%;
+    height: 600px;
+    background: var(--colorPrincipal);
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsla(340, 95%, 50%, 0.459), hsla(317, 45%, 52%, 0.664)), url(imagenes/portada.jpg);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsla(340, 95%, 50%, 0.459), hsla(317, 45%, 52%, 0.664)), url(imagenes/portada.jpg);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+
 header .textos-header{
     display: flex;
     height: 430px;
@@ -160,12 +171,12 @@ main .sobre-nosotros{
 
 .contenido-textos h3 span{
     background: var(--colorPrincipal);
-    color: #fff;
+    color: var(--colorText);
     border-radius: 50%;
     display: inline-block;
     text-align: center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     padding: 2px;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
     margin-right: 5px;
@@ -176,6 +187,7 @@ main .sobre-nosotros{
     font-weight: 300;
     text-align: justify;
 }
+
 
 /* Galeria */
 
@@ -243,11 +255,15 @@ main .sobre-nosotros{
     background: var(--colorPrincipal);
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    border-radius: 5px;
+    padding-top: 2rem;
+    border-radius: 2px;
     width: 48%;
     height: 70vh;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.6);
+}
+
+.cards .card h3 {
+    text-align: center;
 }
 
 .cards .card img{
@@ -256,16 +272,20 @@ main .sobre-nosotros{
     object-fit: cover;
     border: 3px solid #fff;
     border-radius: 50%;
-    display: block;
+    margin-bottom: 2rem;
+    vertical-align: middle;
 }
 
 .cards .card > .contenido-texto-card{
-    width: 60%;
-    color: #fff;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    width: 75%;
+    color: var(--colorText);
+    text-align: justify;
 }
 
 .cards .card > .contenido-texto-card p{
-    font-weight: 300;
     padding-top: 5px;
 }
 
@@ -284,21 +304,123 @@ main .sobre-nosotros{
 }
 
 .servicio-ind{
-    width: 28%;
+    width: 17vw;
+    height: 25vw;
     text-align: center;
+    background-color: var(--colorSecundario);
+    border: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 9px;
+    padding-right: 9px;
 }
 
 .servicio-ind img{
-    width: 90%;
+    width: 95%;
+    margin-bottom: 10px;
 }
 
-.servicio-ind h3{
-    margin: 10px 0;
+.servicio-ind h4{
+    margin: 10px;
+    color: var(--colorText);
 }
 
 .servicio-ind p{
-    font-weight: 300;
     text-align: justify;
+    color: var(--colorText);
+}
+
+/* login */
+.contenedor-login{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    height: 30vh;
+}
+
+.login-form {
+    max-width: 400px;
+    width: 100%;
+    margin: auto;
+    padding: 30px;
+    border-radius: 2px;
+    background-color: var(--colorBackgroundSectionA);
+}
+
+.form-control {
+    background-color: var(--colorBackgroundSectionA);
+    border-color: var(--colorSecundario);
+    border-radius: 2px;
+}
+
+.form-control::placeholder{
+    color: var(--colorSecundario);
+}
+
+.form-control, .form-check-input{
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--colorText);
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.form-check-input {
+    width: auto;
+    margin-right: 10px;
+}
+
+.input-group-text {
+    background-color: var(--colorSecundario);
+    width: 70px;
+    color: var(--colorText);
+    border-radius: 2px;
+    border-color: var(--colorSecundario);
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--colorBackgroundSectionA);
+    border-color: var(--colorSecundario);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  
+input[type="checkbox"]:checked {
+    background-color: var(--colorSecundario);
+    border-color: var(--colorSecundario);
+  }
+
+.form-check{
+    margin-bottom: 25px;
+}
+
+.form-check-label {
+    margin-left: 5px;
+  }
+
+.boton-login {
+    width: 100%;
+    margin-top: 10px;
+    background-color: var(--colorSecundario);
+    color: var(--colorText);
+    border: none;
+    border-radius: 2px;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+.boton-login:hover{
+    background-color: var(--colorPrincipal);
 }
 
 /* footer */
@@ -484,11 +606,16 @@ footer{
     text-align: center;
     margin-right: 60px;
     padding-bottom: 40px;
+    color: var(--colorPrincipal);
 }
 
 .row {
     padding: 25px;
+}
 
+.card {
+    border-radius: 0px;
+    border-color: var(--colorBorde);
 }
 
 #container {
@@ -501,7 +628,34 @@ footer{
     margin-bottom: 60px;
 }
 
-.btn-item-carrito {
-    background-color: var(--colorPrincipal);
+.list-group {
+    border-radius: 2px;
 }
 
+.list-group-item {
+    display: flex;
+}
+
+.list-group-item .btn{
+    border-radius: 2px;
+}
+
+.btn-item-carrito {
+    background-color: var(--colorPrincipal);
+    border-radius: 2px;
+    border: var(--colorPrincipal)
+}
+
+.btn-item-carrito:hover{
+    background-color: var(--colorSecundario);
+}
+
+.btn-vaciar {
+    background-color: var(--colorSecundario);
+    border-radius: 2px;
+    border: var(--colorSecundario);
+}
+
+.btn-vaciar:hover{
+    background-color: var(--colorPrincipal);
+}

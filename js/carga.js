@@ -110,8 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Actualizamos el carrito 
         renderizarCarrito();
         saveLocal();
-
-
     }
 
     /**
@@ -136,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 0);
             // Creamos el nodo del item del carrito
             const miNodo = document.createElement('li');
-            miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
+            miNodo.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center', 'text-right', 'mx-2');
             miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
             // Boton de borrar
             const miBoton = document.createElement('button');

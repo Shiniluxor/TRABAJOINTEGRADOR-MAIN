@@ -44,7 +44,7 @@
                             <a class="nav-link" aria-current="page" href="#contacto">Contacto</a>
                         </li>
                         <li class="nav-item" ml-md-4>
-                            <a class="nav-link btn btn-primary" id="btn-login" href="#">Login</a>
+                            <a class="nav-link btn btn-primary" id="btn-login" href="#login">Login</a>
                         </li>
                     </ul>
                 </div>
@@ -146,9 +146,9 @@
             <h2 class="titulo">Que dicen nuestros clientes</h2>
             <div class="cards">
                 <div class="card">
-                    <img src="imagenes/face2.jpg" alt="">
+                    <img src="imagenes/face2.jpg" alt="Imagen de cliente tech solutions">
                     <div class="contenido-texto-card">
-                        <h4>Tech Solutions</h4>
+                        <h3>Tech Solutions</h3><br>
                         <p>"Estamos muy contentos con los servicios que recibimos de WebVantage. 
                             Su equipo de desarrolladores trabajó de manera diligente para crear una 
                             experiencia en línea excepcional para nuestro sitio web. La comunicación 
@@ -158,9 +158,9 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="imagenes/face2.jpg" alt="">
+                    <img src="imagenes/face2.jpg" alt="Imagen de cliente Juan Pérez">
                     <div class="contenido-texto-card">
-                        <h4>Juan Pérez</h4>
+                        <h3>Juan Pérez</h3><br>
                         <p>"He trabajado con varios desarrolladores web en el pasado, pero mi experiencia
                              con WebVantage fue excepcional. Desde el primer día, su equipo mostró un gran 
                              interés en entender mis necesidades y se tomaron el tiempo para asegurarse de 
@@ -183,19 +183,19 @@
                 <div class="servicio-cont">
                     <div class="servicio-ind">
                         <img src="imagenes/ilustracion1.svg" alt="">
-                        <h3>Diseño y desarrollo de sitios web personalizados:</h3>
+                        <h4>Diseño y desarrollo de sitios web personalizados:</h4>
                         <p>En WebVantage, creemos que cada negocio es único, y por eso ofrecemos un servicio 
                             personalizado para diseñar y desarrollar sitios web que se ajusten a sus necesidades específicas.</p>
                     </div>
                     <div class="servicio-ind">
                         <img src="imagenes/ilustracion4.svg" alt="">
-                        <h3>Servicios de optimización de motores de búsqueda (SEO):</h3>
+                        <h4>Servicios de optimización de motores de búsqueda (SEO):</h4>
                         <p>Nuestros servicios de SEO están diseñados para mejorar la visibilidad de su sitio web en los motores 
                             de búsqueda y atraer tráfico orgánico a su sitio.</p>
                     </div>
                     <div class="servicio-ind">
                         <img src="imagenes/ilustracion3.svg" alt="">
-                        <h3>Desarrollo de aplicaciones móviles:</h3>
+                        <h4>Desarrollo de aplicaciones móviles:</h4>
                         <p>Nuestros desarrolladores altamente capacitados pueden ayudar a crear aplicaciones móviles personalizadas 
                             para iOS y Android que sean intuitivas y fáciles de usar para sus clientes</p>
                     </div>
@@ -210,17 +210,28 @@
         <section id="login">
             <div class="contenedor">
                 <h2 class="titulo">Login</h2>
-                <div class="">
-                    <label for="inputUser" class="form-label">User</label>
-                    <input type="text" id="inputUser" class="form-control">
-                    <label for="inputPassword" class="form-label">Password</label>
-                    <input type="password" id="inputPassword" class="form-control" aria-labelledby="passwordHelpBlock">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="inlineFormCheck">
-                        <label class="form-check-label" for="inlineFormCheck">
-                          Remember me
-                        </label>
-                    </div>
+                <div class="contenedor-login">
+                    <form class="login-form" action="#" method="post">
+                        <div class="input-group mb-4">
+                            <span class="input-group-text" id="basic-addon1">
+                                <label for="username" class="form-label">User</label>
+                            </span>
+                            <input type="text" id="username" name="username" class="form-control" aria-describedby="basic-addon1" placeholder="Username" aria-label="Username" required>
+                        </div>
+                        <div class="input-group mb-4">
+                            <span class="input-group-text" id="basic-addon1">
+                                <label for="password" class="form-label">Pass</label>
+                            </span>
+                            <input type="password" id="password" name="password" class="form-control" aria-describedby="basic-addon1" placeholder="Password" aria-label="Password" required>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+                            <label class="form-check-label" for="inlineFormCheck">
+                            Remember me
+                            </label>
+                        </div>
+                        <input type="submit" value="Iniciar sesión" class="boton-login">
+                    </form>
                 </div>
             </div>
         </section>
