@@ -355,6 +355,7 @@ main .sobre-nosotros{
     padding: 30px;
     border-radius: 2px;
     background-color: var(--colorBackgroundSectionA);
+    border: 1px solid var(--colorPrincipal);
 }
 
 .form-control {
@@ -458,6 +459,63 @@ input[type="checkbox"]:checked {
 .contactenos {
     background: #f2f2f2;
     padding-bottom: 30px;
+}
+
+.form-register{
+    width: 400px;
+    background: var(--);
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: var(--colorSecundario);
+    box-shadow: 7px 13px 37px #000;
+}
+
+.form-register h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.controls{
+    width:100%;
+    background: var(--colorSecundario);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid var(--colorPrincipal);
+    font-family: 'calibri'; /* tipo de fuente */
+    font-size: 18px;
+    color: var(--colorSecundario);
+}
+
+.form-register p {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.form-register a{
+    color: var(--colorSecundario);
+    text-decoration: none;
+}
+
+.form-register a:hover{
+    color: var(--colorSecundario);
+    text-decoration: underline;
+}
+
+.form-register .botons{
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: var(--colorSecundario);
+    margin: 16px 0;
+    font-size: 16px;
 }
 
 /* footer */
