@@ -66,13 +66,22 @@ body {
     align-items: center;
 }
 
+#logo{
+    color: var(--colorText);
+}
+
 #logo:hover{
     background-color: transparent;
+    color: var(--colorSecundario);
 }
 
 #btn-login {
     padding-left: 5vh;
     padding-right: 5vh;
+}
+
+#btn-login:hover{
+    border-color: var(--colorBorde);
 }
 
 .navbar a{
@@ -364,7 +373,7 @@ main .sobre-nosotros{
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: var(--colorText);
+    color: var(--colorSecundario);
     background-color: #fff;
     border: 1px solid #ced4da;
     border-radius: .25rem;
@@ -421,6 +430,34 @@ input[type="checkbox"]:checked {
 
 .boton-login:hover{
     background-color: var(--colorPrincipal);
+}
+
+.modal-content {
+    border-radius: 2px;
+}
+
+.modal-content .modal-header {
+    display: flex;
+}
+
+.modal-content .modal-header h5 {
+    color: var(--colorPrincipal);
+    font-size: 30px;
+    margin-left: auto;
+}
+
+.modal-body {
+    background-color: var(--colorBackgroundSectionA);
+}
+
+#alerta-error {
+    margin-top: 10px;
+}
+
+/* contanctanos */
+.contactenos {
+    background: #f2f2f2;
+    padding-bottom: 30px;
 }
 
 /* footer */
@@ -659,3 +696,4 @@ footer{
 .btn-vaciar:hover{
     background-color: var(--colorPrincipal);
 }
+
