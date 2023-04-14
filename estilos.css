@@ -34,9 +34,10 @@ body {
 
 .titulo {
     color: var(--colorPrincipal);
-    font-size: 40px;
+    font-size: 50px;
     text-align: center;
     margin-bottom: 60px;
+    text-shadow: var(--colorSecundario) 1px 1px;
 }
 
 /* navbar */
@@ -108,7 +109,7 @@ body {
 
 .btn-primary {
     background-color: transparent;
-    border: #c4c2c2f1 3px solid;
+    border: #c4c2c2a9 1px solid;
     border-radius: 5px;
   }
 
@@ -199,8 +200,6 @@ main .sobre-nosotros{
 
 
 /* Galeria */
-
-
 .portafolio{
     background: #f2f2f2;
 }
@@ -254,7 +253,6 @@ main .sobre-nosotros{
 }
 
 /* Clients */
-
 .cards{
     display: flex;
     justify-content: space-evenly;
@@ -265,10 +263,10 @@ main .sobre-nosotros{
     display: flex;
     align-items: center;
     padding-top: 2rem;
-    border-radius: 2px;
+    border-radius: 10px;
     width: 48%;
-    height: 70vh;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.6);
+    height: 63vh;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.7);
 }
 
 .cards .card h3 {
@@ -276,12 +274,12 @@ main .sobre-nosotros{
 }
 
 .cards .card img{
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
     border: 3px solid #fff;
     border-radius: 50%;
-    margin-bottom: 2rem;
+    margin-bottom: 10px;
     vertical-align: middle;
 }
 
@@ -299,7 +297,6 @@ main .sobre-nosotros{
 }
 
 /*  Our team */
-
 .about-services{
     background: #f2f2f2;
     padding-bottom: 30px;
@@ -316,7 +313,7 @@ main .sobre-nosotros{
     width: 17vw;
     height: 25vw;
     text-align: center;
-    background-color: var(--colorSecundario);
+    background-color: #fff;
     border: 5px;
     display: flex;
     flex-direction: column;
@@ -332,12 +329,12 @@ main .sobre-nosotros{
 
 .servicio-ind h4{
     margin: 10px;
-    color: var(--colorText);
+    color: var(--colorSecundario);
 }
 
 .servicio-ind p{
     text-align: justify;
-    color: var(--colorText);
+    color: black;
 }
 
 /* login */
@@ -355,7 +352,6 @@ main .sobre-nosotros{
     padding: 30px;
     border-radius: 2px;
     background-color: var(--colorBackgroundSectionA);
-    border: 1px solid var(--colorPrincipal);
 }
 
 .form-control {
@@ -457,44 +453,55 @@ input[type="checkbox"]:checked {
 
 /* contanctanos */
 .contactenos {
-    background: #f2f2f2;
-    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
 }
 
 .form-register{
-    width: 400px;
-    background: var(--);
+    width: 1000px;
+    background: var(--colorBackgroundSectionA);
     padding: 30px;
-    margin: auto;
-    margin-top: 100px;
     border-radius: 4px;
-    font-family: 'calibri';
-    color: var(--colorSecundario);
-    box-shadow: 7px 13px 37px #000;
-}
-
-.form-register h4{
-    font-size: 22px;
-    margin-bottom: 20px;
-    text-align: center;
+    border-color: var(--colorBorde);
+    color: var(--colorText);
+    /* box-shadow: 7px 13px 37px #000; */
 }
 
 .controls{
     width:100%;
-    background: var(--colorSecundario);
     padding: 10px;
     border-radius: 4px;
     margin-bottom: 16px;
-    border: 1px solid var(--colorPrincipal);
-    font-family: 'calibri'; /* tipo de fuente */
-    font-size: 18px;
+    border: 2px solid var(--colorBorde);
+    font-size: 1rem;
     color: var(--colorSecundario);
 }
+
+.controls:focus{
+    border-color: var(--colorBorde);
+}
+
+.controls::placeholder{
+    color: var(--colorSecundario);
+    background-color: #fff;
+}
+
+.form-register label {
+    color: var(--colorSecundario);
+    height: 40px;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 40px;
+}
+
 
 .form-register p {
     height: 40px;
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
+    color: #94007A;
     line-height: 40px;
 }
 
@@ -504,18 +511,23 @@ input[type="checkbox"]:checked {
 }
 
 .form-register a:hover{
-    color: var(--colorSecundario);
+    color: var(--colorPrincipal);
     text-decoration: underline;
 }
 
 .form-register .botons{
     width: 100%;
-    background: #1f53c5;
-    border: none;
+    background: var(--colorSecundario);
+    border-color: var(--colorBackgroundSectionA);
+    border-radius: 4px;
     padding: 12px;
-    color: var(--colorSecundario);
+    color: var(--colorText);
     margin: 16px 0;
-    font-size: 16px;
+    font-size: 20px;
+}
+
+.form-register .botons:hover{
+    background-color: var(--colorPrincipal);
 }
 
 /* footer */
