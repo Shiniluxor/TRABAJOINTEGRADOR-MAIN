@@ -670,15 +670,23 @@ footer{
     /* Clients */
 
     .cards .card{
-        height: 450px;
+        width: 95%;
+        height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     .cards .card img{
-        width: 90px;
-        height: 90px;
+        width: 60px;
+        height: 60px;
+    }
+
+    /* servicios */
+
+    .servicio-ind {
+        width: 95%;
+        height: 100%;
     }
 
     /* Footer */
