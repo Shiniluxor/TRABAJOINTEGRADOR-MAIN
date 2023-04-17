@@ -5,8 +5,13 @@
 }
 
 :root{
-    --colorPrincipal: #4D0786;
+    /* --colorPrincipal: #4D0786;
     --colorSecundario: #94007A;
+    --colorBorde: #c4c2c2f1;
+    --colorText: #ebe8e8f1;
+    --colorBackgroundSectionA: #f2f2f2; */
+    --colorPrincipal: #212397;
+    --colorSecundario: hsl(240, 100%, 73%);
     --colorBorde: #c4c2c2f1;
     --colorText: #ebe8e8f1;
     --colorBackgroundSectionA: #f2f2f2;
@@ -120,9 +125,9 @@ header {
     height: 600px;
     background: var(--colorPrincipal);
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, hsla(340, 95%, 50%, 0.459), hsla(317, 45%, 52%, 0.664)), url(imagenes/portada.jpg);
+    background: linear-gradient(43deg, rgba(2,0,36,1) 0%, rgba(4,4,255,0.7595413165266106) 0%, rgba(0,212,255,1) 100%), url(imagenes/portada2.jpg);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, hsla(340, 95%, 50%, 0.459), hsla(317, 45%, 52%, 0.664)), url(imagenes/portada.jpg);
+    background: linear-gradient(to right, hsla(246, 95%, 50%, 0.459), hsla(244, 45%, 52%, 0.664)), url(imagenes/portada2.jpg);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-size: cover;
     background-attachment: fixed;
@@ -452,6 +457,16 @@ input[type="checkbox"]:checked {
 }
 
 /* contanctanos */
+
+input:invalid,
+textarea:invalid {
+    border-color: red;
+}
+
+.error {
+    color: red;
+}
+
 .contactenos {
     display: flex;
     justify-content: center;

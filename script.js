@@ -1,5 +1,6 @@
 window.onscroll = function() {cambiarColorNavbar()};
 
+
 document.addEventListener('DOMContentLoaded', () => {
   // Variables
   const baseDeDatos = [
@@ -365,3 +366,100 @@ form.addEventListener('submit', e => {
       alertaError.classList.remove('d-none');
   }
 });
+
+
+function validarFormulario() {
+  var nombre = document.getElementById("nombres");
+  var telefono = document.getElementById("telefono");
+  var correo = document.getElementById("correo");
+  var mensaje = document.getElementById("msn");
+  var terminos = document.getElementById("mi-input");
+
+  var nombreError = document.getElementById("nombreError");
+  var telefonoError = document.getElementById("telefonoError");
+  var correoError = document.getElementById("correoError");
+  var mensajeError = document.getElementById("mensajeError");
+  var terminosError = document.getElementById("terminosError");
+
+  nombreError.innerHTML = "";
+  telefonoError.innerHTML = "";
+  correoError.innerHTML = "";
+  mensajeError.innerHTML = "";
+  terminosError.innerHTML = "";
+
+  if (nombre.value.trim() == "") {
+      nombreError.innerHTML = "Por favor, ingrese su nombre y apellido";
+      return false;
+  }
+
+  if (telefono.value.trim() == "") {
+      telefonoError.innerHTML = "Por favor, ingrese su número de teléfono";
+      return false;
+  }
+
+  if (correo.value.trim() == "") {
+      correoError.innerHTML = "Por favor, ingrese su dirección de correo electrónico";
+      return false;
+  }
+
+  if (mensaje.value.trim() == "") {
+      mensajeError.innerHTML = "Por favor, ingrese su mensaje";
+      return false;
+  }
+
+  if (correo.value.indexOf("@") == -1) {
+      correoError.innerHTML = "Por favor, ingrese una dirección de correo electrónico válida";
+      return false;
+  }
+
+  if (!document.getElementById("check-terminos").checked) {
+    document.getElementById("terminosError").innerHTML = "Debe aceptar los términos y condiciones";
+    return false;
+  }
+
+  return true;
+}
+
+// function generarPDF() {
+//   var nombre = document.getElementById("nombres").value;
+//   var telefono = document.getElementById("telefono").value;
+//   var correo = document.getElementById("correo").value;
+//   var mensaje = document.getElementById("msn").value;
+
+//   // Crear un nuevo objeto jspdf
+//   var doc = new jsPDF();
+
+//   // Agregar el contenido al PDF
+//   doc.text("Nombre y Apellido: " + nombre, 20, 20);
+//   doc.text("Teléfono: " + telefono, 20, 30);
+//   doc.text("Correo electrónico: " + correo, 20, 40);
+//   doc.text("Mensaje: " + mensaje, 20, 50);
+
+//   // Descargar el archivo PDF
+//   doc.save("formulario.pdf");
+// }
+
+$(document).ready(function() {
+  $("#contactForm").submit(function(event) {
+    event.preventDefault(); // evita el envío del formulario
+
+    // Obtiene los valores de los campos
+    var nombre = $("#nombres").val();
+    var telefono = $("#telefono").val();
+    var correo = $("#correo").val();
+    var mensaje = $("#msn").val();
+    var aceptaTerminos = $("#check-terminos").is(":checked");
+
+    // Construye el resumen
+    var resumen = "Nombre y Apellido: " + nombre + "\n";
+    resumen += "Teléfono: " + telefono + "\n";
+    resumen += "Correo electrónico: " + correo + "\n";
+    resumen += "Mensaje: " + mensaje + "\n";
+    resumen += "Acepta términos y condiciones: " + (aceptaTerminos ? "Sí" : "No") + "\n";
+
+    // Muestra el resumen en el div "resumen"
+    $("#resumen").text(resumen);
+  });
+});
+
+

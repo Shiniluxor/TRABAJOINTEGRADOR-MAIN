@@ -203,20 +203,44 @@
             </div>
         </section>        
         <section id="contactenos" class="contactenos">
-                <div class="form-register">
-                    <h2 class="titulo">Contactenos</h2>
-                    <label for="nombres">Nombre y Apellido:</label>
-                    <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre y Apellido">
-                    <label for="telefono">Telefono:</label>
-                    <input class="controls" type="number" name="telefono" id="telefono" placeholder="Ingrese su Telefono">
-                    <label for="correo">Correo electrónico:</label>
-                    <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su correo">
-                    <label for="msn">Mensaje:</label>
-                    <textarea name="textoarea" class="controls" id="msn"cols="40" rows="10" placeholder="Escriba el Mensaje"></textarea>
-                    <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
-                    <input  class="botons" id="mi-input" type="submit" name="Enviar" >
-                </div>
-        </Section>
+            <div class="form-register">
+                <h2 class="titulo">Contactenos</h2>
+                <form id="contactForm" name="contactForm" method="post" onsubmit="return validarFormulario()">
+                    <div class="input-group">
+                        <label for="nombres">Nombre y Apellido:</label>
+                        <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre y Apellido">
+                        <span id="nombreError" class="error"></span>
+                    </div>
+                    <div class="input-group">
+                        <label for="telefono">Telefono:</label>
+                        <input class="controls" type="number" name="telefono" id="telefono" placeholder="Ingrese su Telefono">
+                        <span id="telefonoError" class="error"></span>
+                    </div>
+                    <div class="input-group">
+                        <label for="correo">Correo electrónico:</label>
+                        <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su correo">
+                        <span id="correoError" class="error"></span>
+                    </div>
+                    <div class="input-group">
+                        <label for="msn">Mensaje:</label>
+                        <textarea name="textoarea" class="controls" id="msn"cols="40" rows="10" placeholder="Escriba el Mensaje"></textarea>
+                        <span id="mensajeError" class="error"></span>
+                    </div>
+                    <div class="input-group">
+                        <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+                    </div>
+                    <div class="input-group">
+                        <input id="check-terminos" class="form-check-input" type="checkbox" id="inlineFormCheck">
+                        <label for="mi-input">Acepto los términos y condiciones</label>
+                    </div>
+                    <span id="terminosError" class="error"></span>
+                    <div class="input-group">
+                        <input  class="botons" id="mi-input" type="submit" name="Enviar" >
+                    </div>
+                    <div id="resumen"></div>                    
+                </form>
+            </div>
+        </section>
     </main>
     <footer>
         <div class="contenedor-footer" id="contacto">
@@ -234,7 +258,8 @@
             </div>
         </div>
         <h2 class="titulo-final">&copy; Comision 181 | RODRIGO EMANUEL CABRERA, ANDRES VITALE, ALBERTO RUBEN SARAPURA, LUIS CARLOS TORRES PEREZ, ALAN HINDRYCKX </h2>
-    </footer>
+    </footer>    
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
 
 </html>
