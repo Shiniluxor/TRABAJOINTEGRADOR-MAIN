@@ -11,7 +11,7 @@
     --colorText: #ebe8e8f1;
     --colorBackgroundSectionA: #f2f2f2; */
     --colorPrincipal: #212397;
-    --colorSecundario: hsl(240, 100%, 73%);
+    --colorSecundario: hsla(240, 83%, 57%, 0.753);
     --colorBorde: #c4c2c2f1;
     --colorText: #ebe8e8f1;
     --colorBackgroundSectionA: #f2f2f2;
@@ -269,6 +269,7 @@ main .sobre-nosotros{
     align-items: center;
     padding-top: 2rem;
     border-radius: 10px;
+    margin-bottom: 15px;
     width: 48%;
     height: auto;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.7);
@@ -315,8 +316,8 @@ main .sobre-nosotros{
 }
 
 .servicio-ind{
-    width: 17vw;
-    height: 25vw;
+    width: 45vw;
+    height: 33vw;
     text-align: center;
     background-color: #fff;
     border: 5px;
@@ -328,7 +329,7 @@ main .sobre-nosotros{
 }
 
 .servicio-ind img{
-    width: 95%;
+    width: 85%;
     margin-bottom: 10px;
 }
 
@@ -544,6 +545,13 @@ textarea:invalid {
 .form-register .botons:hover{
     background-color: var(--colorPrincipal);
 }
+
+#resumen {
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 20px;
+  }
+  
 
 /* footer */
 

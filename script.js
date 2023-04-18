@@ -213,7 +213,7 @@ function cambiarColorNavbar() {
   var navbar = document.getElementById("mi-nav");
   var anchors = document.querySelectorAll(".navbar .navbar-brand");
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    navbar.style.backgroundColor = "#94007A";
+    navbar.style.backgroundColor = "#3535E3";
     for (var i = 0; i < anchors.length; i++) {
       anchors[i].style.color = "#fffff";
     }
@@ -420,46 +420,102 @@ function validarFormulario() {
   return true;
 }
 
-// function generarPDF() {
+var form = document.getElementById("contactForm");
+form.addEventListener("submit", function(event) {
+  event.preventDefault(); // previene que el formulario se envíe
+  mostrarPrevisualizacion();
+});
+
+// function mostrarResumen() {
+//   // Obtener los valores de los campos del formulario
+//   var nombre = document.getElementById("nombres").value.trim();
+//   var telefono = document.getElementById("telefono").value.trim();
+//   var correo = document.getElementById("correo").value.trim();
+//   var mensaje = document.getElementById("msn").value.trim();
+
+//   // Validar que los campos no estén vacíos
+//   if (nombre === "" || telefono === "" || correo === "" || mensaje === "") {
+//       alert("Por favor, complete todos los campos antes de enviar el formulario.");
+//       return;
+//   }
+
+//   // Crear el resumen del formulario
+//   var resumen = "<h2>Resumen del formulario</h2>" +
+//                 "<p><strong>Nombre y Apellido:</strong> " + nombre + "</p>" +
+//                 "<p><strong>Teléfono:</strong> " + telefono + "</p>" +
+//                 "<p><strong>Correo electrónico:</strong> " + correo + "</p>" +
+//                 "<p><strong>Mensaje:</strong> " + mensaje + "</p>";
+
+//   // Mostrar el resumen en el elemento con el id "resumen"
+//   document.getElementById("resumen").innerHTML = resumen;
+// }
+
+document.getElementById("btn-exportar-pdf").addEventListener("click", generarPDF);
+
+function mostrarResumen() {
+  // Obtener los valores de los campos del formulario
+  var nombre = document.getElementById("nombres").value.trim();
+  var telefono = document.getElementById("telefono").value.trim();
+  var correo = document.getElementById("correo").value.trim();
+  var mensaje = document.getElementById("msn").value.trim();
+
+  // Validar que los campos no estén vacíos
+  if (nombre === "" || telefono === "" || correo === "" || mensaje === "") {
+      alert("Por favor, complete todos los campos antes de enviar el formulario.");
+      return;
+  }
+
+  // Crear el resumen del formulario
+  var resumen = "<h2>Resumen del formulario</h2>" +
+                "<p><strong>Nombre y Apellido:</strong> " + nombre + "</p>" +
+                "<p><strong>Teléfono:</strong> " + telefono + "</p>" +
+                "<p><strong>Correo electrónico:</strong> " + correo + "</p>" +
+                "<p><strong>Mensaje:</strong> " + mensaje + "</p>";
+
+  // Mostrar el resumen en el elemento con el id "resumen"
+  document.getElementById("resumen").innerHTML = resumen;
+
+  // Agregar event listener al botón para exportar a PDF
+  document.getElementById("btn-exportar-pdf").addEventListener("click", generarPDF);
+}
+
+function generarPDF() {
+  // Obtener el elemento que contiene el resumen
+  var resumen = document.getElementById("resumen");
+
+  // Crear una instancia de jsPDF
+  var doc = new jsPDF();
+
+  // Obtener el contenido HTML del resumen
+  var contenido = resumen.innerHTML;
+
+  // Generar el PDF
+  doc.fromHTML(contenido, 15, 15, {
+    'width': 170
+  });
+
+  // Descargar el PDF con el nombre "formulario.pdf"
+  doc.save("formulario.pdf");
+}
+
+
+
+// function exportarAPdf() {
+//   // Obtener los valores del formulario
 //   var nombre = document.getElementById("nombres").value;
 //   var telefono = document.getElementById("telefono").value;
 //   var correo = document.getElementById("correo").value;
 //   var mensaje = document.getElementById("msn").value;
 
-//   // Crear un nuevo objeto jspdf
+//   // Crear el documento PDF
 //   var doc = new jsPDF();
 
 //   // Agregar el contenido al PDF
-//   doc.text("Nombre y Apellido: " + nombre, 20, 20);
-//   doc.text("Teléfono: " + telefono, 20, 30);
-//   doc.text("Correo electrónico: " + correo, 20, 40);
-//   doc.text("Mensaje: " + mensaje, 20, 50);
+//   doc.text(20, 20, "Nombre y Apellido: " + nombre);
+//   doc.text(20, 30, "Telefono: " + telefono);
+//   doc.text(20, 40, "Correo electrónico: " + correo);
+//   doc.text(20, 50, "Mensaje: " + mensaje);
 
 //   // Descargar el archivo PDF
 //   doc.save("formulario.pdf");
 // }
-
-$(document).ready(function() {
-  $("#contactForm").submit(function(event) {
-    event.preventDefault(); // evita el envío del formulario
-
-    // Obtiene los valores de los campos
-    var nombre = $("#nombres").val();
-    var telefono = $("#telefono").val();
-    var correo = $("#correo").val();
-    var mensaje = $("#msn").val();
-    var aceptaTerminos = $("#check-terminos").is(":checked");
-
-    // Construye el resumen
-    var resumen = "Nombre y Apellido: " + nombre + "\n";
-    resumen += "Teléfono: " + telefono + "\n";
-    resumen += "Correo electrónico: " + correo + "\n";
-    resumen += "Mensaje: " + mensaje + "\n";
-    resumen += "Acepta términos y condiciones: " + (aceptaTerminos ? "Sí" : "No") + "\n";
-
-    // Muestra el resumen en el div "resumen"
-    $("#resumen").text(resumen);
-  });
-});
-
-

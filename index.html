@@ -170,6 +170,35 @@
                     </div>
                 </div>
             </div>
+            <div class="cards">
+                <div class="card">
+                    <img src="imagenes/face3.jpg" alt="Imagen de cliente María González">
+                    <div class="contenido-texto-card">
+                        <h3>María González</h3><br>
+                        <p>"Estoy muy agradecida con WebVantage por su excelente trabajo en mi sitio web. 
+                            Desde el primer contacto, su equipo demostró una gran profesionalidad y 
+                            dedicación en entender mis necesidades y objetivos. Me impresionó mucho la 
+                            calidad del diseño y la facilidad de navegación de mi sitio web. Además, 
+                            siempre estuvieron disponibles para responder mis dudas y solicitudes. 
+                            Sin duda, recomiendo ampliamente a WebVantage para cualquier proyecto de 
+                            desarrollo web".</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="imagenes/face4.jpg" alt="Imagen de cliente Pedro Rodríguez">
+                    <div class="contenido-texto-card">
+                        <h3>Pedro Rodríguez</h3><br>
+                        <p>"Quiero agradecer a WebVantage por su excelente trabajo en mi sitio web. 
+                            Su equipo de desarrolladores demostró una gran habilidad y conocimiento 
+                            técnico en la implementación de las funcionalidades que requería mi sitio 
+                            web. Me gustó mucho la forma en que trabajaron en conjunto conmigo para 
+                            asegurarse de que el resultado final fuera exactamente lo que estaba buscando. 
+                            También valoré su puntualidad y atención a los detalles. Definitivamente 
+                            los recomiendo a cualquier persona que busque una empresa de desarrollo web 
+                            confiable y de alta calidad".</p>
+                    </div>
+                </div>
+            </div>
         </section>
         <section class="about-services" id="servicios">
             <div class="contenedor">
@@ -193,19 +222,28 @@
                         <p>Nuestros servicios de SEO están diseñados para mejorar la visibilidad de su sitio web en los motores 
                             de búsqueda y atraer tráfico orgánico a su sitio.</p>
                     </div>
+                </div>
+                <div class="servicio-cont">
                     <div class="servicio-ind">
                         <img src="imagenes/ilustracion3.svg" alt="">
                         <h4>Desarrollo de aplicaciones móviles:</h4>
                         <p>Nuestros desarrolladores altamente capacitados pueden ayudar a crear aplicaciones móviles personalizadas 
                             para iOS y Android que sean intuitivas y fáciles de usar para sus clientes</p>
                     </div>
+                    <div class="servicio-ind">
+                        <img src="imagenes/undraw_server_cluster_jwwq.svg" alt="">
+                        <h4>Programacion Backend</h4>
+                        <p>En WebVantage, creemos que cada negocio es único, y por eso ofrecemos un servicio 
+                            personalizado para diseñar y desarrollar sitios web que se ajusten a sus necesidades específicas.</p>
+                    </div>
+
                 </div>
             </div>
         </section>        
         <section id="contactenos" class="contactenos">
             <div class="form-register">
                 <h2 class="titulo">Contactenos</h2>
-                <form id="contactForm" name="contactForm" method="post" onsubmit="return validarFormulario()">
+                <form id="contactForm" name="contactForm" method="get" onsubmit="return validarFormulario()">
                     <div class="input-group">
                         <label for="nombres">Nombre y Apellido:</label>
                         <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre y Apellido">
@@ -235,9 +273,11 @@
                     </div>
                     <span id="terminosError" class="error"></span>
                     <div class="input-group">
-                        <input  class="botons" id="mi-input" type="submit" name="Enviar" >
+                        <input class="botons" id="mi-input" type="button" name="Enviar" value="Enviar" onclick="mostrarResumen()">
                     </div>
-                    <div id="resumen"></div>                    
+                    <div id="resumen">
+                        <button id="btn-exportar-pdf">Exportar a PDF</button>
+                    </div>                    
                 </form>
             </div>
         </section>
@@ -261,5 +301,6 @@
     </footer>    
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+
 
 </html>
