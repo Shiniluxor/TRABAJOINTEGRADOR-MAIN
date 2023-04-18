@@ -426,30 +426,6 @@ form.addEventListener("submit", function(event) {
   mostrarPrevisualizacion();
 });
 
-// function mostrarResumen() {
-//   // Obtener los valores de los campos del formulario
-//   var nombre = document.getElementById("nombres").value.trim();
-//   var telefono = document.getElementById("telefono").value.trim();
-//   var correo = document.getElementById("correo").value.trim();
-//   var mensaje = document.getElementById("msn").value.trim();
-
-//   // Validar que los campos no estén vacíos
-//   if (nombre === "" || telefono === "" || correo === "" || mensaje === "") {
-//       alert("Por favor, complete todos los campos antes de enviar el formulario.");
-//       return;
-//   }
-
-//   // Crear el resumen del formulario
-//   var resumen = "<h2>Resumen del formulario</h2>" +
-//                 "<p><strong>Nombre y Apellido:</strong> " + nombre + "</p>" +
-//                 "<p><strong>Teléfono:</strong> " + telefono + "</p>" +
-//                 "<p><strong>Correo electrónico:</strong> " + correo + "</p>" +
-//                 "<p><strong>Mensaje:</strong> " + mensaje + "</p>";
-
-//   // Mostrar el resumen en el elemento con el id "resumen"
-//   document.getElementById("resumen").innerHTML = resumen;
-// }
-
 document.getElementById("btn-exportar-pdf").addEventListener("click", generarPDF);
 
 function mostrarResumen() {
@@ -466,11 +442,12 @@ function mostrarResumen() {
   }
 
   // Crear el resumen del formulario
-  var resumen = "<h2>Resumen del formulario</h2>" +
+  var resumen = "<h3 class='titulo-resumen'>Resumen del formulario</h3>" +
+                "<div class='contenedor-resumen'>"+
                 "<p><strong>Nombre y Apellido:</strong> " + nombre + "</p>" +
                 "<p><strong>Teléfono:</strong> " + telefono + "</p>" +
                 "<p><strong>Correo electrónico:</strong> " + correo + "</p>" +
-                "<p><strong>Mensaje:</strong> " + mensaje + "</p>";
+                "<p><strong>Mensaje:</strong> " + mensaje + "</p> </div>";
 
   // Mostrar el resumen en el elemento con el id "resumen"
   document.getElementById("resumen").innerHTML = resumen;
