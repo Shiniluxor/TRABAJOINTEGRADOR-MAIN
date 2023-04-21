@@ -1,5 +1,5 @@
 window.onscroll = function() {cambiarColorNavbar()};
-
+// window.jsPDF = window.jspdf.jsPDF;
 
 document.addEventListener('DOMContentLoaded', () => {
   // Variables
@@ -324,49 +324,6 @@ function validarLogin() {
   .catch(error => console.error(error));
 } 
 
-function validarUsuario(event) {
-  event.preventDefault();
-  
-  // Obtener los valores de usuario y contraseña ingresados por el usuario
-  const username = usernameInput.value;
-  const password = passwordInput.value;
-  
-  // Realizar la validación del usuario y contraseña contra la base de datos
-  fetch('../db/usuarios.json')
-  .then(response => response.json())
-  .then(data => {
-    const usuarios = data.usuarios;
-    const usuarioEncontrado = usuarios.find(usuario => usuario.username === username && usuario.password === password);
-    
-    if (usuarioEncontrado) {
-      alert(`Bienvenido, ${usuarioEncontrado.username}!`);
-    } else {
-      alert('Usuario o contraseña incorrectos');
-    }
-  })
-  .catch(error => console.error(error));
-}
-
-
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  
-  const username = document.querySelector('#username').value;
-  const password = document.querySelector('#password').value;
-  
-  // Lógica para verificar si el usuario y la contraseña son correctos
-  const usuarioCorrecto = true;
-  const passwordCorrecto = false;
-  
-  if (usuarioCorrecto && passwordCorrecto) {
-      // Inicio de sesión exitoso, redirigir al usuario a la página de inicio
-      window.location.href = 'index.html';
-  } else {
-      // Mostrar la alerta de error
-      alertaError.classList.remove('d-none');
-  }
-});
-
 
 function validarFormulario() {
   var nombre = document.getElementById("nombres");
@@ -447,52 +404,41 @@ function mostrarResumen() {
                 "<p><strong>Nombre y Apellido:</strong> " + nombre + "</p>" +
                 "<p><strong>Teléfono:</strong> " + telefono + "</p>" +
                 "<p><strong>Correo electrónico:</strong> " + correo + "</p>" +
-                "<p><strong>Mensaje:</strong> " + mensaje + "</p> </div>";
+                "<p><strong>Mensaje:</strong> " + mensaje + "</p> " +
+                "<button class='boton' onclick='generarPDF()' id='btn-exportar-pdf'>Exportar a PDF</button> </div> <div id='elementH'></div>";
 
   // Mostrar el resumen en el elemento con el id "resumen"
   document.getElementById("resumen").innerHTML = resumen;
 
   // Agregar event listener al botón para exportar a PDF
-  document.getElementById("btn-exportar-pdf").addEventListener("click", generarPDF);
+  // document.getElementById("btn-exportar-pdf").addEventListener("click", generarPDF);  
+  // document.getElementById("btn-generar-pdf").addEventListener("click", function() {
+  //   generarPDF();
+  // });
 }
 
+
 function generarPDF() {
-  // Obtener el elemento que contiene el resumen
-  var resumen = document.getElementById("resumen");
-
+  const { jsPDF } = window.jspdf;
   // Crear una instancia de jsPDF
-  var doc = new jsPDF();
-
-  // Obtener el contenido HTML del resumen
-  var contenido = resumen.innerHTML;
-
+  const doc = new jsPDF();
+  // Obtener el elemento que contiene el resumen
+  var resumen = document.getElementById("resumen").innerHTML;  
   // Generar el PDF
-  doc.fromHTML(contenido, 15, 15, {
-    'width': 170
+  // var elementHTML = $('#resumen').html();
+  // var specialElementHandlers = {
+  //     '#elementH': function (element, renderer) {
+  //         return true;
+  //     }
+  // };
+  // doc.fromHTML(elementHTML, 15, 15, {
+  //     'width': 170,
+  //     'elementHandlers': specialElementHandlers
+  // });
+  doc.fromHTML(resumen, 15, 15, {
+      'width': 170
   });
 
   // Descargar el PDF con el nombre "formulario.pdf"
   doc.save("formulario.pdf");
 }
-
-
-
-// function exportarAPdf() {
-//   // Obtener los valores del formulario
-//   var nombre = document.getElementById("nombres").value;
-//   var telefono = document.getElementById("telefono").value;
-//   var correo = document.getElementById("correo").value;
-//   var mensaje = document.getElementById("msn").value;
-
-//   // Crear el documento PDF
-//   var doc = new jsPDF();
-
-//   // Agregar el contenido al PDF
-//   doc.text(20, 20, "Nombre y Apellido: " + nombre);
-//   doc.text(20, 30, "Telefono: " + telefono);
-//   doc.text(20, 40, "Correo electrónico: " + correo);
-//   doc.text(20, 50, "Mensaje: " + mensaje);
-
-//   // Descargar el archivo PDF
-//   doc.save("formulario.pdf");
-// }

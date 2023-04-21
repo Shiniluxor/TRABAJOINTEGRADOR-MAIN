@@ -1,15 +1,13 @@
+/* Reset de estilos de margen y relleno para todos los elementos HTML */
+/* Configura el margen (espacio exterior) y el relleno (espacio interior)
+ de todos los elementos en la página a 0 */
 * {
     margin: 0;
     padding: 0;
-    /* box-sizing: border-box; */
-}
-
+    font-family: 'open sans';
+  }
+  
 :root{
-    /* --colorPrincipal: #4D0786;
-    --colorSecundario: #94007A;
-    --colorBorde: #c4c2c2f1;
-    --colorText: #ebe8e8f1;
-    --colorBackgroundSectionA: #f2f2f2; */
     --colorPrincipal: #212397;
     --colorSecundario: hsla(240, 83%, 57%, 0.753);
     --colorBorde: #c4c2c2f1;
@@ -21,21 +19,41 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
   }
 
+/* Configura la posición de desplazamiento vertical en la página */
+
+/* Establece la cantidad de espacio (101px) que se debe dejar en la 
+parte superior de la página cuando se desplaza hacia un marcador de ancla (ancla) */
 html {
     scroll-padding-top: 101px;
   }
+  
 
 body {
-    font-family: 'open sans';
+    /* font-family: 'open sans'; */
 }
 
+/* Estilo para el contenedor principal */
 .contenedor {
+    /* Establece un relleno superior e inferior de 60px y ningún relleno en los lados izquierdo y derecho */
+    /* El relleno se utiliza para agregar espacio entre el contenido del contenedor y su borde */
     padding: 60px 0;
+  
+    /* Establece el ancho del contenedor en el 90% del ancho disponible del elemento padre */
     width: 90%;
+  
+    /* Establece el ancho máximo del contenedor en 1000px */
+    /* Esto significa que el contenedor nunca será más ancho que 1000px, incluso si el ancho del elemento padre lo permite */
     max-width: 1000px;
+  
+    /* Establece los márgenes izquierdo y derecho del contenedor en "auto" */
+    /* Esto centra horizontalmente el contenedor en el elemento padre */
     margin: auto;
+  
+    /* Establece la propiedad overflow (desbordamiento) en "hidden" */
+    /* Esto oculta cualquier contenido que se extienda más allá del borde del contenedor */
     overflow: hidden;
-}
+  }
+  
 
 .titulo {
     color: var(--colorPrincipal);
@@ -46,15 +64,30 @@ body {
 }
 
 /* navbar */
-
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
+/* Estilo para la barra de navegación */
 .navbar {
+    /* Establece la posición del elemento a "relative" */
+    /* Esto significa que la posición del elemento se basará en su posición original, y no se sacará del flujo normal del documento */
     position: relative;
+  
+    /* Establece un relleno superior e inferior de 1rem y un relleno izquierdo y derecho de 1rem */
+    /* El relleno se utiliza para agregar espacio entre el contenido de la barra de navegación y su borde */
     padding: 1rem 1rem;
+  
+    /* Establece el valor de "display" (visualización) del elemento en "flex" */
+    /* Esto permite que los elementos dentro de la barra de navegación se alineen horizontalmente */
     display: flex;
+  
+    /* Establece cómo se alinearán los elementos dentro de la barra de navegación en el eje vertical */
+    /* En este caso, se alinearán al centro verticalmente */
     align-items: center;
-}
+  }
+  
 
 .navbar.fixed-top {
+    /* Establece la posición del elemento como "fixed" */
+    /* Esto fija el elemento en una posición específica en la ventana del navegador */
     position: fixed;
     top: 0;
     width: 100%;
@@ -68,10 +101,13 @@ body {
   }
 
 .navbar-collapse {
+    /* Establece el valor de "flex-grow" en 0 y utiliza la regla "!important" para asegurarse de que este valor anula cualquier otro */
     flex-grow: 0 !important;
     align-items: center;
 }
 
+/* logo */
+/*------------------------------------------*/
 #logo{
     color: var(--colorText);
 }
@@ -80,7 +116,8 @@ body {
     background-color: transparent;
     color: var(--colorSecundario);
 }
-
+/*boton login*/
+/*------------------------------------------*/
 #btn-login {
     padding-left: 5vh;
     padding-right: 5vh;
@@ -90,6 +127,8 @@ body {
     border-color: var(--colorBorde);
 }
 
+/*navbar*/
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
 .navbar a{
     color: #ebe8e8f1;
     text-align: center;
@@ -119,13 +158,22 @@ body {
   }
 
 /* header  */
-
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
 header {
     width: 100%;
     height: 600px;
     background: var(--colorPrincipal);
     /* fallback for old browsers */
-    background: linear-gradient(43deg, rgba(2,0,36,1) 0%, rgba(4,4,255,0.7595413165266106) 0%, rgba(0,212,255,1) 100%), url(imagenes/portada2.jpg);
+    /* Establece el fondo de la página utilizando una combinación de un gradiente lineal y una imagen de fondo */
+    background: 
+    linear-gradient(
+        43deg, /* dirección del gradiente en grados (en este caso, 43 grados hacia la derecha) */
+        rgba(2,0,36,1) 0%, /* primer color en el gradiente y su posición (0% desde la izquierda) */
+        rgba(4,4,255,0.76) 0%, /* segundo color en el gradiente y su posición (0% desde la izquierda) */
+        rgba(0,212,255,1) 100% /* tercer color en el gradiente y su posición (100% desde la izquierda) */
+    ),
+    url(imagenes/portada2.jpg); /* imagen de fondo, especificada por su ubicación en el servidor */
+
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, hsla(246, 95%, 50%, 0.459), hsla(244, 45%, 52%, 0.664)), url(imagenes/portada2.jpg);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -163,7 +211,7 @@ header .textos-header{
 }
 
 /* About us */
-
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
 main .sobre-nosotros{
     padding: 30px 0 60px 0;
 }
@@ -205,6 +253,7 @@ main .sobre-nosotros{
 
 
 /* Galeria */
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
 .portafolio{
     background: #f2f2f2;
 }
@@ -259,6 +308,7 @@ main .sobre-nosotros{
 }
 
 /* Clients */
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
 .cards{
     display: flex;
     justify-content: space-evenly;
@@ -304,6 +354,7 @@ main .sobre-nosotros{
 }
 
 /*  Our team */
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
 .about-services{
     background: #f2f2f2;
     padding-bottom: 30px;
@@ -345,6 +396,7 @@ main .sobre-nosotros{
 }
 
 /* login */
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
 .contenedor-login{
     display: flex;
     justify-self: center;
@@ -459,12 +511,7 @@ input[type="checkbox"]:checked {
 }
 
 /* contanctanos */
-
-input:invalid,
-textarea:invalid {
-    /* border-color: red; */
-}
-
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
 .error {
     color: red;
 }
@@ -483,7 +530,6 @@ textarea:invalid {
     border-radius: 4px;
     border-color: var(--colorBorde);
     color: var(--colorText);
-    /* box-shadow: 7px 13px 37px #000; */
 }
 
 .controls{
@@ -556,20 +602,35 @@ textarea:invalid {
     font-size: 2rem;
     color: var(--colorPrincipal);
     text-align: center;
-    margin-bottom: 60px;
+    padding: 0px;
 }
 
 .contenedor-resumen{
-background-color: var(--colorSecundario);
-border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--colorSecundario);
+    border-radius: 2px;
 }
 
 .contenedor-resumen p {
     color: var(--colorText);
-}  
+}
+
+.contenedor-resumen .boton {
+    width: 40%;
+    background: rgb(73, 172, 81);
+    border-color: rgb(73, 172, 81);
+    border-radius: 4px;
+    padding: 12px;
+    color: var(--colorText);
+    margin: 16px 0;
+    font-size: 20px;
+}
+
 
 /* footer */
-
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
 footer{
     background: #414141;
     padding: 60px 0 30px 0;
